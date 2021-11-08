@@ -9,7 +9,7 @@ def parse_atom(lang, string):
     parts = string.rstrip(')').replace('(', ',').split(',')
     parts = [part.strip() for part in parts]
     pred = lang.get(parts[0])
-    args = [lang.get(o) for o in parts[1:]]
+    args = [lang.get(o) for o in parts[1:] if o]
     return pred(*args)
 
 
